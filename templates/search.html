@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% block title %}Buscar Alumnos {% endblock %}
+{% block content %}
+
+
+<html lang="en">
+
+<div class="container-fluid">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="row well">
+
+
+  <h2> "Digite Primeras Letras del Nombre o Apellido y/o Documento"</h1>
+  <form action="." method="GET">
+    <label for="q">Buscar: </label>
+    <input type="text" name="q" value="{{ query|escape }}">
+    <input type="submit" value="Buscar">
+  </form>
+ 
+
+  {% if query  %}
+    <h2>Resultado para "{{ query|escape }}":</h2>
+ 
+    {% if results %}
+      <ul>
+<table class="table table-bordered">
+      <header>
+      <tr>
+        <th>Nombres</th>
+        <th>Programa</th>
+        <th>Ver Detalles</th>
+        <th> Editar</th>
+       
+       
+       <!-- <td>Acta</td>
+        <td>Libro</td>
+        <td>Folio</td>
+        <td>Fecha</td>!-->
+      </tr> 
+    </header>
+      {% for p in results %}
+ 
+  <body>  
+    <tr>
+      <td>{{ p.nombres }}</td>
+      <td>{{ p.programa }}</td>
+     
+      <td><a class="btn btn-default"  href="/alumno/{{p.id}}/"><span class="glyphicon glyphicon-search"></span> Ver</a></td>
+      <td><a class="btn btn-default" href="/edit/{{p.id}}/"><span class="glyphicon glyphicon-pencil"></span> Editar</a></td>
+     
+   
+           
+    </tr>   
+   </body>
+   
+
+      {% endfor %}
+</table>    
+      </ul>
+    {% else %}
+      <p>No Se Encontraron Datos!! ;(</p>
+    {% endif %}
+  {% endif %}
+
+<a href='/alumnos/page/1' class="btn btn-info">Regresar a la Lista</a>
+{% endblock %}
+</div>
+</div>
+</div>

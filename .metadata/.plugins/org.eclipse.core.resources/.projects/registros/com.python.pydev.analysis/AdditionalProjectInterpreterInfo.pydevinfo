@@ -1,0 +1,42 @@
+-- VERSION_3
+-- START DISKCACHE
+C:\graduados\.metadata\.plugins\org.eclipse.core.resources\.projects\registros\com.python.pydev.analysis\v1_indexcache
+.v1_indexcache
+registros.urls|0|C:\graduados\registros\registros\urls.py
+registros.wsgi|0|C:\graduados\registros\registros\wsgi.py
+registros.__init__|0|C:\graduados\registros\registros\__init__.py
+registros.settings|0|C:\graduados\registros\registros\settings.py
+manage|0|C:\graduados\registros\manage.py
+-- END DISKCACHE
+-- START DICTIONARY
+3
+2=registros.wsgi
+3=registros.urls
+1=registros.settings
+-- END DICTIONARY
+-- START TREE 1
+20
+adm|1|ADMINS!11@
+all|1|ALLOWED_HOSTS!11@
+app|1|application!19@
+dat|1|DATABASES!11@
+deb|1|DEBUG!11@
+ins|1|INSTALLED_APPS!11@
+lan|1|LANGUAGE_CODE!11@
+log|1|LOGGING!11@
+man|1|MANAGERS!11@
+med|2|MEDIA_ROOT!11@MEDIA_URL!11@
+mid|1|MIDDLEWARE_CLASSES!11@
+roo|1|ROOT_URLCONF!11@
+sec|1|SECRET_KEY!11@
+sit|1|SITE_ID!11@
+sta|4|STATICFILES_DIRS!11@STATIC_ROOT!11@STATIC_URL!11@STATICFILES_FINDERS!11@
+tem|3|TEMPLATE_DEBUG!11@TEMPLATE_DIRS!11@TEMPLATE_LOADERS!11@
+tim|1|TIME_ZONE!11@
+url|1|urlpatterns!27@
+use|3|USE_TZ!11@USE_L10N!11@USE_I18N!11@
+wsg|1|WSGI_APPLICATION!11@
+-- END TREE
+-- START TREE 2
+0
+-- END TREE

@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% block title %}Registro de Asistencia {% endblock %}
+{% block content %}
+<br>	
+<meta charset='utf-8'>
+{% if user.is_authenticated %} 
+{% if user.is_superuser = True %}
+<a class="btn btn-info" href="/agregar"><span class="glyphicon glyphicon-plus"></span> Nuevo</a></td>
+{% endif %}
+<td><a class="btn btn-default" href="/search1/{{p.id}}/"><span class="glyphicon glyphicon-eye-open"></span> Buscar</a></td>
+{% endif %}
+<!--<a href='/agregar'>Agregar nuevo</a><br>!-->
+<form action="" method="post">
+ {% csrf_token %}
+{% if alumnos %}
+	<table class="table table-bordered">
+		<header>
+			<tr>
+				<th>Numero</th>
+				<th>Nombres</th>
+				<th>Nit</th>
+				<th>Programa</th>
+				<th>Asistencia</th>
+								
+			</tr>	
+		</header>
+
+	{% for p in alumnos %}
+		<body>
+			<tr>
+				<td>{{p.id}}</td>
+				<td>{{p.nombres}}</td>
+				<td>{{p.nit }}</d>
+				<td>{{p.programa}}</td>
+				
+				<td><label class="checkbox-inline">
+  							<input type="checkbox" id="checkboxEnLinea1" name="asistencia" value="{{ p.id }}" {% if p.asistencia %} checked{%endif%}>
+  					</label></td>
+				
+			</tr>	
+		</body>
+			<!--<p><a href="/alumno/{{p.id}}/">{{p.nombres}}</a></p>!-->
+	{% endfor %}
+	</table>
+
+	<!--<button class="btn btn-default btn-lg" type="submit"><span class="glyphicon glyphicon-saved"></span> Gaurdar Cambios </button>!-->
+	
+{% else %}
+	<h2> No Existen Alumnos a Consultar  :( </h2>
+
+
+{% endif %}	
+</form>
+
+{% if alumnos %}
+	<div class="pagination">
+		
+		<li><a href ="/asistencia/page/1"><< </a></li>
+	{% if alumnos.has_previous %}
+		<li><a href="/asistencia/page/{{alumnos.previous_page_number}}">Anterior </a></li>
+	{% else %}	
+		<li><a href="#">Previo </a></li>
+
+	{% endif %}
+
+	{% if alumnos.has_next %}
+		<li><a href="/asistencia/page/{{alumnos.next_page_number}}">Siguiente </a></li>
+	{% else %}	
+		<li><a href="#">Siguiente </a></li>
+
+	{% endif %}
+		<li><a href="/asistencia/page/{{alumnos.paginator.num_pages}}"> >> </a></li>
+	
+	</div>
+
+	<h4> Página {{alumnos.number}} de {{alumnos.paginator.num_pages}}</h4>
+{% endif %}
+
+{% endblock %}

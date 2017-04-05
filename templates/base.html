@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+	<HEAD>
+		<meta charset="utf-8">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		
+		
+		<TITLE>{% block title %} Bienvenidos {% endblock %}</TITLE>
+		<link rel="stylesheet"href="/media/bootstrap/css/bootstrap.css"> 
+
+		
+		
+		<style type= "text/css">
+
+
+		
+			body{
+				padding-top: 180px;
+				padding-left: 60px;
+				padding-bottom: 60px;
+				background-color:#E6E6E6;
+
+
+			}
+
+
+			.sidebar-nav{
+						padding: 9px 0;
+			}
+
+			img {
+					border: 1px solid grey;
+					margin: 0;
+					padding: 2;
+					border-radius: 400px;
+					width: 50px;
+					overflow: hidden;
+
+
+			}
+			.redondo img {
+					border: 1px solid grey;
+					margin: 0;
+					padding: 2;
+					border-radius: 100px;
+					overflow: hidden;
+					width: 80px;
+					text-align: right;
+
+			}
+
+			th{
+                background-color: #848484;
+                color: #fff;
+            }
+
+             td{
+                padding: 5px 40px 5px 40px;
+                background-color: #D0D0D0;
+            }
+            table{
+            	font-size: 12px;
+            }
+
+
+		</style>
+	</HEAD>
+<BODY>
+				
+
+		<nav role="navigation"class="navbar navbar-default navbar-inverse navbar-fixed-top">
+
+			{% if user.is_authenticated %}
+				<div class="navbar-text pull-right">
+					Usuario :  {{user.first_name}}
+					<img src="/media/{{user.userprofile.foto }}" width="100px" heigth="100px"/>
+						
+				</div>
+								
+			{% endif %}
+
+
+			 <div class="redondo"><img src="/media/img/logo.gif"/></div>
+			<div class="navbar-header">
+				<button type="button"data-target="#navbarCollapse"data-toggle="collapse"class="navbar-toggle">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					
+
+				</button>
+				
+			</div>
+			<div id="navbarCollapse"class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href='/'>Inicio</a></li>
+
+					<li><a href='/contactos'>Contacto</a></li>
+					{% if user.is_superuser = True %}
+					<!--<li><a href='/reporte_personas_excel'>Alumnos</a></li>!-->
+					<li><a href='/alumnos/page/1'>Alumnos</a></li>
+					<li><a href='/agregar'>Registrar</a></li>
+					<li><a href='/programas'>Programas</a></li>
+					<li><a href='/asistencia/page/1'>Registro Asistencia</a></li>
+					<li><a href='/borra_asistencia'>Limpiar Asistencia</a></li>
+					<!--<li><a href='/pruebas'>Pruebas</a></li>!-->
+					{% endif %}
+					{% if user.is_authenticated and user.is_staff == True %}
+						<li><a href='/search'>Buscar Datos</a></li>
+
+						<li class="dropdown"><a class="dropdown-toggle"data-toggle="dropdown">Informes<b class="caret"></b></a>
+							
+							<ul class="dropdown-menu">
+
+
+								<li><a  href="/reporte">Graduados Por Fecha</a></li>
+								<li><a  href="/Reporte2">Graduados Por Programa</a></li>
+								<li><a  href="/programas1">Reporte Programas</a></li>
+								<li><a href='/asisteciapdf'>Reporte Asistencia</a></li>
+
+								
+							</ul>
+						</li>
+
+					{% endif %}
+
+					{% if user.is_authenticated and user.is_staff == False %} 
+						
+						
+						<li><a href='/asistencia/page/1'>Registro Asistencia</a></li>
+						<li><a href='/search'>Buscar Datos</a></li>
+						<li><a href='/asisteciapdf'>Reporte Asistencia</a></li>
+						<li><a href='/borra_asistencia'>Limpiar Asistencia</a></li>
+								
+
+					{%endif%}
+
+
+					{% if user.is_authenticated %}
+					 <li> <a href='/logout'>Salir</a></li>
+					{% else %}
+					
+						<li><a href='/login'>Ingresar</a></li>
+					{% endif %}
+					<li><a href='/about'>Acerca de...</a></li>
+				</ul>
+
+				
+			</div>
+
+			
+		</nav>			
+
+
+
+		
+			
+			{% block content %}
+			{% endblock %}
+			<br>
+			<footer>
+				<p>&copy; Realizado por Wenceslao</p>
+			</footer>
+				
+						<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+						<!--<script src="/media/js/jquery.min.js"></script>!-->
+
+						
+						<script src="/media/bootstrap/js/bootstrap.js"></script>
+	
+
+</BODY>	
+</html>	
+
+
+
+
+

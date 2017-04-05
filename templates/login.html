@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %} Login {% endblock %}
+
+
+{% block content %}
+<form action="." method="POST">
+
+	
+
+		
+	{% csrf_token %}
+	<div class="alert alert-danger">
+	{{ mensaje }}
+</div>
+<div class="container">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="row well">
+        <table class="table table-bordered" >
+				{{form.as_p}}
+				<button class="btn btn-success">Acceder</button>
+			</div>
+		</div>		
+	</div>
+		
+</div>
+	
+
+	<div class="center-block">
+
+	
+	
+
+	</div>
+</form>
+
+
+{% endblock %}
+
+	</table>

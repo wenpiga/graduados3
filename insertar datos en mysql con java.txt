@@ -1,0 +1,19 @@
+jButton1.setText("Guardar");
+jButton1.setPreferredSize(new java.awt.Dimension(85, 20));
+jButton1.addActionListener(new java.awt.event.ActionListener() {
+public void actionPerformed(java.awt.event.ActionEvent evt) {
+String sql=" INSERT INTO ESTUDIANTES (NOMBRES, APELLIDOS, CEDULA, EDAD, SEXO) VALUES ("
++ "'" + txtNombres.getText() + "',"
++ "'" + txtApellidos.getText() + "',"
++ "'" + txtCedula.getText() + "',"
++ txtEdad.getValue().toString() + ","
++ "'" + ( ( rbnM.isSelected() )? "M" : "F") + "')";
+db.executeQuery(sql);
+if (sql==" ")
+{System.out.println ("Error al insertar el registro");
+JOptionPane.showMessageDialog(pnlBotones, "Error al insertar el registro");}
+else
+{System.out.println("El registro fue insertado con exito");
+JOptionPane.showMessageDialog(pnlBotones, "El registro fue insertado con exito");}
+}
+});

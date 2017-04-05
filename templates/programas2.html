@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}Reporte Alumnos Por Programa {% endblock %}
+{% block content %}
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+
+<div class="container-fluid">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="row well">
+
+		<table class="table table-bordered ">
+
+   			 <title>Graduados por Progama</title>
+	
+
+				<form action="/Reporte3/"method="POST">
+					REPORTE DE GRADUADOS POR PROGRAMA<BR/><BR/>
+					<TABLE BORDER=2 WIDTH=450>
+						{% csrf_token %}
+
+						<TD>{{ form.as_p }}</TD>
+					</TABLE>
+					<br><br>
+					<button type="submit" class="btn btn-success">Generar Raporte</button>
+					
+		
+				</form>
+				<br>
+		</table>
+
+	
+{% endblock %}
+</div>
+</div>
+</div>

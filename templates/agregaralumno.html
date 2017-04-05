@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block title %}Agregar Datos de Alumnos {% endblock %}
+{% block content %}
+
+
+
+
+<div class="container-fluid">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="row well">
+
+		<table class="table table-bordered ">
+		<thead>
+			<tr>
+				<th><p align="center" ><font size=5 font color="WHITE"> REGISTRO DE  ALUMNOS</font></th></p>
+			</tr>
+		</thead>
+
+
+			<form action="."method="POST">
+
+
+		
+				<TABLE BORDER=2 WIDTH=450>
+					{% csrf_token %}
+
+					
+					{{form.nit.label}}<br/>{{form.nit}}<br/>
+					{{form.nombres.label}}<br/>{{form.nombres}}
+					{{form.programa.label}}{{form.programa}}<br/>
+					{{form.libro.label}}<br/>{{form.libro}}
+					{{form.acta.label}}{{form.acta}}
+					{{form.folio.label}}{{form.folio}}
+					{{form.fecha.label}}{{form.fecha}}
+					{{form.diploma.label}}<br/>{{form.diploma}}
+					{{form.sede.label}}{{form.sede}}
+					{{form.asistencia.label}}{{form.asistencia}}
+					<br><br>
+				<button class="btn btn-info"type="submit">Grabar</button>
+				<button class="btn btn-info"type="submit">Limpiar</button>
+	
+			</form>
+		</table>
+<br>
+	{{ informacion }}
+
+<br/>
+<a href='/alumnos/page/1' class="btn btn-info">Regresar a la Lista</a>
+	
+{% endblock %}
+</div>
+</div>
+</div>

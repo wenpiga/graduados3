@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block  title %} Inicio- Bienvenidos {% endblock %}
+{% block content %}
+<br> Aplicativo para consulta de graduados</br>
+{% if user.is_authenticated %}
+	<p>Bienvenido {{user.first_name}}</p>
+	
+
+		<!--<img src="/media/{{user.userprofile.foto }}" width="100px" heigth="100px"/>!-->
+		
+	
+	
+{% endif %}
+
+ {% endblock %}
+ 
+

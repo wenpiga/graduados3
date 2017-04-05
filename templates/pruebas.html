@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+{% extends 'base.html' %}
+{% block title %}Contactanos {% endblock %}
+{% block content %}
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+</head>    
+<table class="table table-bordered">
+		<header>
+			<tr>
+				<td>Nombres</td>
+				
+			</tr>	
+		</header>	
+
+<body>
+		
+		{% for a in mi_form %}  
+    	
+    		<tr>
+				<td>{{a.nombre}}</td>
+				
+								
+			</tr>	
+</body>
+			<!--<p><a href="/alumno/{{p.id}}/">{{p.nombres}}</a></p>!-->
+	{% endfor %}
+</table>	
+	
+    
+{% endblock %}

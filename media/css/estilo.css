@@ -1,0 +1,58 @@
+{
+		font-size:topx;
+
+}
+header h1{
+	font-family:Helvetica;
+	font-size:per;
+
+}
+header img{
+	float:rigth;
+
+}
+nav{
+	background : dodgerblue;
+	height:auto;
+	margin:opx;
+
+}
+nav a{
+	color:white;
+	font-family:'Italica';
+	font-size:len;
+	padding:20px
+	text-transform: uppercase;
+
+}
+nav a:link{
+	text-decoration:none;
+}
+nav a:hover{
+	color:midnightblue;
+
+}
+body{
+	background:mintcream;
+	margin:& auto;
+	width:80%;
+
+
+}
+section{
+	background: lightblue;
+	box-shadow: 10px 10px 5px #888;
+	-moz-box-shadow:10px 10px 5px #888;
+	-webkit-box-shadow:10px 10px 5px #888;
+	padding:20px;
+	height:400px;
+
+}
+section h1{
+	font-family: Sans_Serif;
+}
+section a{
+	font-size:20px;
+	border-radius:5px solid;
+
+}

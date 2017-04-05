@@ -1,0 +1,6 @@
+MODULES_MANAGER_V2
+manage|C:\graduados\registros\manage.py
+registros.__init__|C:\graduados\registros\registros\__init__.py
+registros.settings|C:\graduados\registros\registros\settings.py
+registros.urls|C:\graduados\registros\registros\urls.py
+registros.wsgi|C:\graduados\registros\registros\wsgi.py

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Agregar Datos de Alumnos {% endblock %}
+{% block content %}
+	<form action="."method="POST">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<button class="btn btn-primary"type="submit">Grabar</button>	
+		<button class="btn btn-primary"type="submit">Limpiar</button>
+		
+	</form>
+<br>
+	{{ informacion }}
+
+
+<a href='/alumnos/page/1' class="btn btn-primary">Regresar a la Lista</a>
+	
+{% endblock %}

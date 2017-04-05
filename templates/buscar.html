@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block title %}Buscar Alumnos {% endblock %}
+{% block content %}
+
+
+<html lang="en">
+
+  <h1> "Digite Primeras Letras del Nombre o Apellido y/o Documento"</h1>
+  <form action="." method="GET">
+    <label for="q">Buscar: </label>
+    <input type="text" name="q" value="{{ query|escape }}">
+    <!--<a class="btn btn-info" ="Search" ><span class="glyphicon glyphicon-search"></span> Buscar</a>!-->
+   <input type="submit" value="Buscar">
+  </form>
+ 
+
+  {% if query  %}
+    <h2>Resultado para "{{ query|escape }}":</h2>
+ 
+    {% if results %}
+      <ul>
+<table class="table table-hover">
+      <header>
+      <tr>
+        <td>Nombres</td>
+        <td>Programa</td>
+        <td>Ver Detalles</td>
+       </tr> 
+    </header>
+      {% for p in results %}
+ 
+  <body>  
+    <tr>
+      <td>{{ p.nombres }}</td>
+      <td>{{ p.programa }}</td>
+      <!--<td>{{ alumno.acta }}</td>
+      <td>{{ alumno.libro}}</td>
+      <td>{{ alumno.folio}}</td>
+      <td>{{ alumno.fecha}}</td>!-->
+      <td><a class="btn btn-default"  href="/alumno/{{p.id}}/"><span class="glyphicon glyphicon-search"></span> Ver</a></td>
+              <!--<li>{{ p|escape }}</l1>!-->
+    </tr>   
+   </body>
+   
+
+      {% endfor %}
+</table>    
+      </ul>
+    {% else %}
+      <p>No Se Encontraron Datos!! ;(</p>
+    {% endif %}
+  {% endif %}
+
+<a href='/alumnos/page/1' class="btn btn-info">Regresar a la Lista</a>
+{% endblock %}

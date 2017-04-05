@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block title %}Alumno{{alumno.nombre}} {% endblock %}
+{% block content %}
+
+
+<h1>{{ alumno.nombres }}</h1> <p> 
+<table class="table table-bordered">
+
+<header>
+			<tr bgcolor="white">
+				<th>Programa</th>
+				<th>Documento</th>
+				<th>Acta</th>
+				<th>Libro</th>
+				<th>Folio</th>
+				<th>Fecha</td>
+				<th>Diploma</th>
+				{% if user.is_superuser %}
+					<th>Eliminar Registro</th>
+				{%endif%}
+								
+			</tr>	
+		</header>
+	<body>	
+		<tr bgcolor="white">
+
+			<td>{{ alumno.programa }}</td>
+			<td>{{ alumno.nit}}</td>
+			<td>{{ alumno.acta }}</td>
+			<td>{{ alumno.libro}}</td>
+			<td>{{ alumno.folio}}</td>
+			<td>{{ alumno.fecha}}</td>
+			<td>{{ alumno.diploma}}</td>
+			{% if user.is_superuser %}
+				<td><a class="btn btn-default"  href="/eliminar/{{p.id}}/"><span class="glyphicon glyphicon-search"></span> Eliminar</a></td>
+			{%endif%}
+		</tr>		
+	</body>	
+</table>
+
+<!--<h2><a href='/alumnos/page/1'>Regresar a la Lista</a></h2>!-->
+<h2><a href="javascript:window.history.go(-1);"class="btn btn-info">Regresar a la Lista</a></h2>
+
+
+{% endblock %}

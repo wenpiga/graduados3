@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+</head>    
+
+	
+<table cellspacing="10" cellpadding="2" border="1">
+
+		<header>
+
+
+			<tr>
+				<td align="center">Nit</td>
+				<td align="center">Nombre</td>
+				<td align="center">Placa</td>
+				<td align="center">Fecha</td>
+				<td align="center">Observaciones</td>
+			</tr>	
+		</header>	
+
+<body>
+		
+		{% for p in form %}  
+    	
+    		<tr>
+				<td width="150" >{{p.nit}}</td>
+				<td align="center">{{p.nit }}</d>
+				<td align="left" width="220">{{p.placa}}</td>
+				<td align="center">{{p.fecha}}</td>
+				<td align="center">{{p.observaciones}}</td>
+								
+			</tr>	
+</body>
+			<!--<p><a href="/alumno/{{p.id}}/">{{p.nombres}}</a></p>!-->
+	{% endfor %}
+</table>	
+	
+    
+</html>

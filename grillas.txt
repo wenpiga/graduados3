@@ -1,0 +1,163 @@
+https://www.daniweb.com/programming/software-development/threads/125879/how-to-create-a-grid-with-boa-constructor
+
+
+
+
+#Boa:Frame:Frame1
+import wx
+import wx.grid
+def create(parent):
+    return Frame1(parent)
+[wxID_FRAME1, wxID_FRAME1GRID1, 
+] = [wx.NewId() for _init_ctrls in range(2)]
+class Frame1(wx.Frame):
+    def _init_ctrls(self, prnt):
+        # generated method, don't edit
+        wx.Frame.__init__(self, id=wxID_FRAME1, name='', parent=prnt,
+              pos=wx.Point(366, 256), size=wx.Size(400, 250),
+              style=wx.DEFAULT_FRAME_STYLE, title='Frame1')
+        self.SetClientSize(wx.Size(384, 214))
+        self.grid1 = wx.grid.Grid(id=wxID_FRAME1GRID1, name='grid1',
+              parent=self, pos=wx.Point(8, 8), size=wx.Size(368, 200), style=0)
+        self.grid1.Center(wx.VERTICAL)
+        # you have to add this in the editor!!!
+        # grid has 8 rows and 5 columns
+        self.grid1.CreateGrid(8, 5)
+        # you can als add some simple cell formatting
+        self.grid1.SetColSize(3, 200)
+        self.grid1.SetRowSize(0, 25)
+        self.grid1.SetCellValue(0, 0, "First cell")
+        self.grid1.SetCellValue(1, 1, "Another cell")
+        self.grid1.SetCellValue(2, 2, "Yet another cell")
+        self.grid1.SetCellValue(3, 3, "This cell is read-only")
+        self.grid1.SetCellFont(0, 0, wx.Font(12, wx.ROMAN, wx.ITALIC, wx.NORMAL))
+        self.grid1.SetCellTextColour(1, 1, wx.RED)
+        self.grid1.SetCellBackgroundColour(2, 2, wx.CYAN)
+        self.grid1.SetReadOnly(3, 3, True)
+        
+        
+    def __init__(self, parent):
+        self._init_ctrls(parent)
+if __name__ == '__main__':
+    app = wx.PySimpleApp()
+    frame = create(None)
+    frame.Show()
+    app.MainLoop()
+
+
+
+
+
+def validar(self):
+        
+       
+        
+        w = self.codbarra.text()
+        self.codbarra.clear()
+        self.codbarra.setFocus()
+        
+        
+        
+        
+        
+
+        db=MySQLdb.connect(host='localhost',user='root',passwd='',db = 'prueba')
+        cursor = db.cursor()
+
+        sql = cursor.execute("""SELECT codbarra,nombre,presentacion,iva,venta  FROM  producto   """)
+
+        ret = cursor.fetchall()
+        
+        
+       
+       
+        try:
+            for i in range(0,len(ret)):
+                #print ret[i][0]
+                if ret[i][0] == w:
+                    
+                    
+                    a = ret[i][0]
+                    b = ret[i][1]
+                    c = ret[i][2]
+                    d = ret[i][3]
+                    e = ret[i][4]
+                    y = 1
+                
+                    #self.subtotal.setText(str(int(ret[i][4])))
+                    
+                    
+                    
+
+                    self.registro.append([str(ret[i][0]),str(ret[i][1]),str(ret[i][2]),str(ret[i][3]),int(ret[i][4]),str(int(y))]) # cargo los datos al arreglo y los muestro en la grilla
+                    #print self.registro
+                    
+                    
+                    
+
+                    a = ""
+                    b = ""
+                    c = ""
+                    d = ""
+                    e = ""
+                    
+
+                    ret = []
+                   
+                    i = 0
+                    while i < len(self.registro):
+                        item = QtGui.QTableWidgetItem()
+                        item.setText(self.registro[i][0])
+                        item.setTextAlignment(QtCore.Qt.AlignRight)
+                        self.tabla.setItem(i, 0,item)
+            
+
+                        item = QtGui.QTableWidgetItem()
+                        item.setText(self.registro[i][1])
+                        item.setTextAlignment(QtCore.Qt.AlignLeft)
+                        self.tabla.setItem(i, 1,item)
+            
+                        item = QtGui.QTableWidgetItem()
+                        item.setText(str(self.registro[i][2]))
+                        item.setTextAlignment(QtCore.Qt.AlignCenter)
+                        self.tabla.setItem(i, 2,item)
+
+                        item = QtGui.QTableWidgetItem()
+                        item.setText(str(self.registro[i][3]))
+                        item.setTextAlignment(QtCore.Qt.AlignCenter)
+                        self.tabla.setItem(i, 3,item)
+
+                        item = QtGui.QTableWidgetItem()
+                        item.setText(str(self.registro[i][4]))
+                        item.setTextAlignment(QtCore.Qt.AlignCenter)
+                        self.tabla.setItem(i, 4,item)
+                        
+                        item = QtGui.QTableWidgetItem()
+                        item.setText(str(self.registro[i][5]))
+                        item.setTextAlignment(QtCore.Qt.AlignCenter)
+                        self.tabla.setItem(i, 5,item)
+                        
+                        i = i + 1
+                        
+                        
+                        
+                        self.tabla.setRowCount(len(self.registro))
+
+
+
+
+
+
+
+			x=0
+>           		for r in self.reg:
+>                		self.grdDat.SetCellValue(x,1,str(r[1]))
+>                		self.grdDat.SetCellValue(x,2,str(r[6]))
+>                		x+=1
+                        
+
+
+direccion para buscar como llenar grids en boa contructor
+
+http://stackoverflow.com/questions/20110213/wxgrid-setcellvalue-and-wordwrap
+                        

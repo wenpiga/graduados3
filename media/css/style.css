@@ -1,0 +1,311 @@
+body {
+	font-family: verdana, helvetica, arial, sans-serif;
+	font-size: 10px;
+	text-align: center;
+	background: url(images/page_bg.jpg);
+	color: #6f6f6f;
+}
+
+html, body, #wrapper, h1, #nav, li, ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+th, td {
+	font-size: 11px;
+}
+
+img { border: 0; }
+
+#wrapper {
+	margin: 16px auto;
+	text-align: left;
+	width: 750px;
+	position: relative;
+}
+
+h1, h2, h3 {
+	font-size: 11px;
+}
+
+
+h1 {
+	margin: 0;
+	padding: 0;
+}
+
+h2 {
+	margin: 0 0 5px 0;
+	padding: 0;
+}
+
+h3 {
+	padding: 4px 0 0 0;
+}
+
+p {
+	margin: 1em 0;
+	padding: 0;
+}
+
+.block {
+	display: block;
+}
+
+.clear {
+	clear: both;
+	height: 1px;
+	padding-top: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+	font-size: 1px;
+	line-height: 1px;
+}
+
+* html .clear {
+	margin-top: -5px;
+	margin-bottom: -4px;
+}
+
+.left {
+	float: left;
+	margin: 1px 8px 0px 0px;
+}
+
+.softright {
+	text-align: right;
+}
+
+.readmore {
+	text-align: right;
+}
+
+/* ***** */
+
+html, body, #wrapper {
+	height: 100%;
+}
+
+body {
+	background: #a6b3cb;
+	color: #fff;
+}
+
+p {
+	line-height: 1.4;
+}
+
+a {
+	color: #fbde3b;
+	text-decoration: none;
+}
+
+a:hover {
+   text-decoration: underline;
+}
+
+#wrapper {
+	margin: auto;
+	width: 787px;
+	padding: 0;
+	background: url(images/page_bg.gif) repeat-y;
+}
+
+#wrapper-i {
+	background: url(images/page_bg.gif) repeat-y;
+	width: 100%;
+}
+
+/* header */
+
+#header {
+	position: absolute;
+	top: 0;   left: 13px;
+	width: 766px;
+	background: url(images/menu_bg.gif) repeat-x;
+}
+
+#header-cap {
+	position: absolute;
+	top: 197px;   left: 327px;
+	width: 129px; height: 29px;
+	background: url(images/header_2.jpg) no-repeat;
+}
+
+#header h1 {
+	background: url(images/header.jpg) no-repeat;
+	text-align: right;
+	margin: 32px 0 0 0;
+}
+
+/* nav */
+
+#nav {
+	position: absolute;
+	top: 0;   left: 0;
+	width: 574px; height: 32px;
+	background: url(images/menu_cap.gif) top right no-repeat;
+}
+
+#nav li {
+	float: left;
+}
+
+#b-nav {
+	background: url(images/b_nav_r.jpg) top right no-repeat;
+}
+
+/* body */
+
+#spacer {
+	height: 197px;
+}
+
+#body {
+	background: url(images/body_bg.jpg) repeat-x;
+	margin: 0 8px 0 13px;
+	padding: 14px;
+	min-height: 200px;
+}
+
+#body-i {
+	background: url(images/divider_v.gif) 276px 9% no-repeat;
+}
+
+/* left */
+
+#left {
+	float: left;
+	width: 261px;
+}
+
+#bullets {
+	padding-top: 15px;
+	background: url(images/box_t.jpg) no-repeat;
+}
+
+#bullets ul {
+	padding-bottom: 20px;
+	background: url(images/box_b.jpg) bottom left no-repeat;
+}
+
+* html #bullets ul {
+	width: 100%;
+}
+
+* html #bullets img {
+	margin-left: -3px;
+	marg\in-left: 0px;
+	float: left;
+}
+
+#bullets img {
+	display: block;
+}
+
+#left .i {
+	margin: 0 25px;
+}
+
+/* right */
+
+#right {
+	float: right;
+	width: 442px;
+	margin-top: 15px;
+}
+
+#right .i {
+	margin: 0 253px 0 27px;
+}
+
+#right .j {
+	float: right;
+	width: 246px;
+	margin-top: 0.5em
+}
+
+#right .i .left {
+	margin: 0;
+}
+
+#right .j ul {
+	float: right;
+	width: 130px;
+	display: inline;
+	margin-right: 10px;
+}
+
+#right .clear {
+	padding-top: 7px;
+	margin:  0 0 10px 0;
+}
+
+ul.bigbullets li {
+	background: url(images/bullet.gif) left no-repeat;
+	margin: 0;
+	padding: 5px 2px 5px 20px;
+}
+
+* html ul.bigbullets li {
+	text-indent: -1.5em;
+}
+
+/* footer */
+
+#footer-p {
+	clear: both;
+	height: 24px;
+}
+
+#footer    { background: url(images/footer_w_bg.gif) repeat-x; }
+#footer .l { background: url(images/footer_w_l.gif) top left no-repeat; }
+#footer .r { background: url(images/footer_w_r.gif) top right no-repeat; }
+
+#foot-nav    { background: url(images/footer_g_bg.gif) repeat-x; }
+#foot-nav .l { background: url(images/footer_g_l.gif) top left no-repeat; }
+#foot-nav .r { background: url(images/footer_g_r.gif) top right no-repeat; }
+
+#footer {
+	color: #d96d1e;
+	text-align: center;
+}
+
+#footer a {
+	color: #d96d1e;
+	text-decoration: underline;
+}
+
+#footer a:hover {
+	color: black;
+}
+
+#foot-nav {
+	position: relative;
+	top: -14px;
+	width: 43em;
+	margin: auto;
+	color: #f8fbc8;
+}
+
+#foot-nav .r {
+	padding: 9px 0 10px 0;
+	width: 100%;
+}
+
+#foot-nav a {
+	color: #f8fbc8;
+	text-decoration: none;
+}
+
+#foot-nav a:hover {
+	color: #f8fbc8;
+	text-decoration: underline;
+}
+
+#footer p {
+	position: relative;
+	margin-top: 13px;
+	top: -20px;
+}

@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% block title %}Buscar Alumnos {% endblock %}
+{% block content %}
+
+
+<html lang="en">
+
+<div class="container-fluid">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="row well">
+
+
+  <h2> "Digite Primeras Letras del Nombre o Apellido"</h1>
+  <form action="." method="GET">
+  
+   
+    <label for="q">Buscar: </label>
+    <input type="text" name="q" value="{{ query|escape }}">
+    <input type="submit" value="Buscar">
+  </form>
+ 
+
+  {% if query  %}
+    <h2>Resultado para "{{ query|escape }}":</h2>
+ 
+    {% if results %}
+      <ul>
+<form action="." method="POST" enctype="multipart/form-data">
+{% csrf_token %}
+
+<input type="hidden" name="q" value="{{ query }}">
+<table class="table table-bordered">
+      <header>
+      <tr>
+        <th>Nombres</th>
+        <th>Programa</th>
+        <th>Asistencia</th>
+       
+       
+       <!-- <td>Acta</td>
+        <td>Libro</td>
+        <td>Folio</td>
+        <td>Fecha</td>!-->
+      </tr> 
+    </header>
+      {% for p in results %}
+ 
+  <body>  
+    <tr>
+      <td>{{ p.nombres }}</td>
+      <td>{{ p.programa }}</td>
+
+      <td><label class="checkbox-inline">
+                <input type="checkbox" id="checkboxEnLinea1" name="asistencia" value="{{ p.id }}" {% if p.asistencia %} checked{%endif%}>
+            </label></td>
+    
+   
+           
+    </tr>   
+   </body>
+   
+
+      {% endfor %}
+</table>    
+<button class="btn btn-default btn-lg" type="submit"><span class="glyphicon glyphicon-saved"></span> Gaurdar Cambios </button>
+
+
+
+</form>
+      </ul>
+    {% else %}
+      <p>No Se Encontraron Datos!! ;(</p>
+    {% endif %}
+  {% endif %}
+
+<a href='/asistencia/page/1' class="btn btn-info">Regresar a la Lista</a>
+{% endblock %}
+</div>
+</div>
+</div>

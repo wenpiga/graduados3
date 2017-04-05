@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+{% include 'empresa.html'%}<br/>
+<html>
+
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+
+table{
+
+	text-align: center;
+	font-stretch: left;
+	font-size: 3;
+
+
+}
+	
+
+
+
+</style>
+<body>
+	<table class="table table-bordered" rules="all" border="0.2"cellpadding="5" cellspacing="5" >
+
+		<header>
+			<tr>
+				
+				<td>Nombres</td>
+				<td>Documento</td>
+				<td>Programa</td>
+				<td>Libro</td>
+				<td>Acta</td>
+			</tr>	
+		</header>
+
+		<body>
+		
+			{% for p in prueba %}  
+    	
+    		<tr>
+    			<li><td>{{p.nombres}}</td></li>
+				<td>{{p.nit }}</d>
+				<td>{{p.programa}}</td>
+				<td>{{p.libro}}</td>
+				<td>{{p.acta}}</td>
+								
+			</tr>	
+		</body>
+			<!--<p><a href="/alumno/{{p.id}}/">{{p.nombres}}</a></p>!-->
+	{% endfor %}
+	</table>	
+	
+</body>
+
+</html>

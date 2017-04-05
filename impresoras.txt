@@ -1,0 +1,8 @@
+DO C:\grados\FOXYPREVIEWER.APP
+_SCREEN.ofoxypreviewer.clanguage = "SPANISH"
+
+REPORT FORM c:\grados\grados1.frx  PREVIEW ALL FOR fecha >=  fini .AND. fecha <= ffin
+
+
+paginas
+"Pagina " + TRANS(_PAGENO) + " de " + TRANS( _PAGETOTAL)

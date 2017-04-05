@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+	<HEAD>
+		<meta charset="utf-8">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		
+		
+		<TITLE>{% block title %} Bienvenidos {% endblock %}</TITLE>
+		<link rel="stylesheet"href="/media/bootstrap/css/bootstrap.css"> 
+		<link rel="stylesheet"href="/media/bootstrap/css/bootstrap.responsive.css"> 
+		<script src="/media/js/jquery.js"></script>
+		<script src="/media/bootstrap/js/bootstrap.js"></script>
+		<script src="/media/bootstrap/js/bootstrap-hover-dropdown.js"></script>
+		<script src="/media/bootstrap/js/bootstrap-hover-dropdown.mim"></script>
+		<script src="/media/bootstrap/js/bootstrap.mim"></script>
+		<style type= "text/css">
+
+		
+			body{
+				padding-top: 90px;
+				padding-left: 60px;
+				padding-bottom: 60px;
+
+
+			}
+			.sidebar-nav{
+						padding: 9px 0;
+			}
+		</style>
+	</HEAD>
+<BODY>
+		<nav class="navbar navbar-default"role="navigation">
+			<div class="navbar-header">
+				<button type="button"class="navbar-toggle"data-toggle="collapse"data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">-toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand"href="#">Logo</a>
+			</div>
+
+			<div class="collapse navbar-collapse"id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#">Enlace 1</a></li>
+					<li><a href="#">Enalce 2</a></li>
+					<li class="dropdown">
+						<a href="#"class="dropdown-toggle"data-toggle="dropdown">Deslegable<b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Opcion 1</a></li>
+							<li><a href="#">Opcion 2</a></li>
+							<li><a href="#">Opcion 3</a></li>
+						</ul>
+					</li>	
+			
+			{% block content %}
+			{% endblock %}
+			<br>
+			<footer>
+				<p>&copy; Realizado por Wenceslao</p>
+			</footer>
+				
+
+	
+
+</BODY>	
+</html>	
+
+
+
+
+

@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+{% block title %}Listado de Alumnos {% endblock %}
+{% block content %}
+<br>	
+<meta charset='utf-8'>
+{% if user.is_authenticated %} 
+{% if user.is_superuser = True %}
+<a class="btn btn-info" href="/agregar"><span class="glyphicon glyphicon-plus"></span> Nuevo</a></td>
+<div class="col-lg-1">
+    <a id="crear_detalle" href="/reporte_personas_excel" class="btn btn-info btn-block">
+        <span class="glyphicon glyphicon-list-alt"></span>Excel
+    </a>
+</div>
+{% endif %}
+<td><a class="btn btn-default" href="/search/{{p.id}}/"><span class="glyphicon glyphicon-eye-open"></span> Buscar</a></td>
+
+{% endif %}
+<!--<a href='/agregar'>Agregar nuevo</a><br>!-->
+{% if alumnos %}
+	<table class="table table-bordered">
+
+		<header>
+		
+			<tr>
+				<th>Numero</th>
+				<th>Nombres</th>
+				<th>Nit</th>
+				<th>Programa</th>
+				<th>Libro</th>
+				<th>Acta</th>
+				<th>Ver Datos</th>
+				<th>Editar Datos</th>
+				<th>Eliminar Datos</th>
+				<th>Asistencia</th>
+								
+			</tr>	
+
+		</header>
+
+	{% for p in alumnos %}
+		<body>
+			<tr>
+				<td>{{p.id}}</td>
+				<td>{{p.nombres}}</td>
+				<td>{{p.nit }}</d>
+				<td>{{p.programa}}</td>
+				<td>{{p.libro}}</td>
+				<td>{{p.acta}}</td>
+				<td><a class="btn btn-default"  href="/alumno/{{p.id}}/"><span class="glyphicon glyphicon-search"></span> Ver</a></td>
+				<td><a class="btn btn-default" href="/edit/{{p.id}}/"><span class="glyphicon glyphicon-pencil"></span> Editar</a></td>
+				
+				
+				
+				{% if user.is_superuser %}
+				<td><a class="btn btn-default" href="/edit/{{p.id}}/"><span class="glyphicon glyphicon-pencil"></span> Eliminar</a></td>
+				
+				
+							
+				{% endif %}
+			</tr>	
+		</body>
+			<!--<p><a href="/alumno/{{p.id}}/">{{p.nombres}}</a></p>!-->
+	{% endfor %}
+	</table>
+{% else %}
+	<h2> No Existen Alumnos a Consultar  :( </h2>
+{% endif %}	
+
+{% if alumnos %}
+	<div class="pagination">
+		
+		<li><a href ="/alumnos/page/1"><< </a></li>
+	{% if alumnos.has_previous %}
+		<li><a href="/alumnos/page/{{alumnos.previous_page_number}}">Anterior </a></li>
+	{% else %}	
+		<li><a href="#">Previo </a></li>
+
+	{% endif %}
+
+	{% if alumnos.has_next %}
+		<li><a href="/alumnos/page/{{alumnos.next_page_number}}">Siguiente </a></li>
+	{% else %}	
+		<li><a href="#">Siguiente </a></li>
+
+	{% endif %}
+		<li><a href="/alumnos/page/{{alumnos.paginator.num_pages}}"> >> </a></li>
+	
+	</div>
+
+	<h4> Página {{alumnos.number}} de {{alumnos.paginator.num_pages}}</h4>
+{% endif %}	
+
+{% block js %}
+<script>
+$(document).ready(function() 
+{   
+    var table = $('#tabla').DataTable( {
+        "language": {
+            url: "/static/localizacion/es_ES.json"
+        }
+    } );
+  
+    $('#tabla tbody').on( 'click', 'tr', function() 
+    {
+        if ($(this).hasClass('selected') ) 
+        {           
+            $(this).removeClass('selected');
+             
+        }
+        else 
+        {
+            table.$('tr.selected').removeClass('selected');
+            $(this).addClass('selected');                      
+        }
+    });   
+     
+});
+</script>
+{% endblock js %}
+
+
+
+
+{% endblock %}

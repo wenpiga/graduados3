@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+{% extends 'base.html' %}
+
+
+
+
+{% block title %} Reportes Fecha {% endblock %}
+{% block content %}
+
+
+
+
+<script type="text/javascript" src="/admin/jsi18n/"></script>
+<script type="text/javascript" src="/media/admin/js/core.js"></script>
+<script type="text/javascript"src="/media/admin/js/admin/RelatedObjectLookups.js"></script>
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<head>
+	<div class="container-fluid">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="row well">
+
+                <table class="table table-bordered" >
+
+   	                <title>Consulta</title>
+
+		              <body>
+    		              <h2>Generar Reporte Por Fechas</h2><br/><br/><br/>
+    		                  <form action="/consultas/" method="POST">
+           
+    			                 {% csrf_token %}
+        		                  <table>
+                                  
+                                       {{ form.media }}
+           	 	                       {{form.as_table}}
+        		                  </table>
+                                <input type="submit" value="Enviar"> 
+        		<!--<a class="btn btn-info" href="/consultas"><span class="glyphicon glyphicon-wrench"></span> Generar</a></td>-->
+        
+    		</form>
+		</body>
+	</table>
+    
+
+</head>
+</html>
+
+    
+{% endblock %}
+</div>
+    </div>
+    </div>  

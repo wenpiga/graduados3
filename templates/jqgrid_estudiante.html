@@ -1,0 +1,37 @@
+{% extends "admin/base_site.html" %}
+{% load adminmedia admin_list i18n %}
+ 
+{% block extrastyle %}
+ {{ block.super }}
+ <link rel="stylesheet" type="text/css" href="{% admin_media_prefix %}css/changelists.css" />
+ {{ media }}
+ 
+<!-- Llamamos a los archivos que se necesitan para construir el jqgrid -->
+<link rel="stylesheet" type="text/css" media="screen" href="{% admin_media_prefix %}js/jqgrid3.8.1/css/redmond/jquery-ui-1.8.2.custom.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="{% admin_media_prefix %}js/jqgrid3.8.1/css/ui.jqgrid.css" />
+ 
+<script src="{% admin_media_prefix %}js/jqgrid3.8.1/js/jquery-1.4.2.min.js" type="text/javascript"></script>
+<script src="{% admin_media_prefix %}js/jqgrid3.8.1/js/i18n/grid.locale-es.js" type="text/javascript"></script>
+<script src="{% admin_media_prefix %}js/jqgrid3.8.1/js/jquery.jqGrid.min.js" type="text/javascript"></script>
+{% endblock %}
+ 
+{% block bodyclass %}change-list{% endblock %}
+ 
+ {% block breadcrumbs %}
+<div>
+ › Demostración jqGrid en Django</div>
+ {% endblock %}
+ 
+{% block coltype %}flex{% endblock %}
+ 
+{% block content %}
+ 
+<table id="jqgrid_estudiante"></table>
+<div id="pagernav"></div>
+<!-- pasamos los argumentos de los permisos que tiene el usuario -->
+<input type="hidden" id="grid_perms_add" value="{{ perms.app.add_estudiante }}"/>
+<input type="hidden" id="grid_perms_change" value="{{ perms.app.change_estudiante }}"/>
+<input type="hidden" id="grid_perms_delete" value="{{ perms.app.delete_estudiante }}"/>
+ 
+<script src="{% admin_media_prefix %}js/jqgrid_estudiante.js" type="text/javascript"> </script>
+{% endblock %}
